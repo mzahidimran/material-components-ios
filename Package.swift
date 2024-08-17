@@ -3,9 +3,9 @@ import PackageDescription
 
 let package = Package(
     name: "MaterialComponents",
-    defaultLocalization: "en",
+    defaultLocalization: "en",  // Set the default localization
     platforms: [
-        .iOS(.v11)
+        .iOS(.v11)  // Define the minimum iOS version supported
     ],
     products: [
 //        .library(
@@ -15,10 +15,6 @@ let package = Package(
         .library(
             name: "MaterialComponentsChips",
             targets: ["Chips"]
-        ),
-        .library(
-            name: "MaterialComponentsElevation",
-            targets: ["Elevation"]
         ),
         .library(
             name: "MaterialComponentsButtons",
@@ -44,36 +40,67 @@ let package = Package(
             name: "MaterialComponentsTypography",
             targets: ["Typography"]
         ),
-        // Add more libraries as needed for other subspecs
+        .library(
+            name: "MaterialComponentsCollections",
+            targets: ["Collections"]
+        ),
+        .library(
+            name: "MaterialComponentsActivityIndicator",
+            targets: ["ActivityIndicator"]
+        ),
+        .library(
+            name: "MaterialComponentsFlexibleHeader",
+            targets: ["FlexibleHeader"]
+        ),
+        .library(
+            name: "MaterialComponentsBottomAppBar",
+            targets: ["BottomAppBar"]
+        ),
+        .library(
+            name: "MaterialComponentsCards",
+            targets: ["Cards"]
+        ),
+        .library(
+            name: "MaterialComponentsDialogs",
+            targets: ["Dialogs"]
+        ),
+        .library(
+            name: "MaterialComponentsSnackbar",
+            targets: ["Snackbar"]
+        ),
     ],
     dependencies: [],
     targets: [
 //        .target(
 //            name: "MaterialComponents",
-//            path: "components",  // 'path' should come before 'sources'
-//            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
-//            publicHeadersPath: "src",  // Specifies public headers
-//            cSettings: [
-//                .headerSearchPath("private"),
-//                .headerSearchPath("src")
-//            ]
+//            dependencies: [
+//                "Chips",
+//                "Buttons",
+//                "BottomSheet",
+//                "Dialogs",
+//                "NavigationBar",
+//                "TextFields",
+//                "Typography",
+//                "Collections",
+//                "ActivityIndicator",
+//                "FlexibleHeader",
+//                "BottomAppBar",
+//                "Card",
+//                "Snackbar"
+//            ],
+//            path: "components"
+////            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+////            publicHeadersPath: "src",
+////            cSettings: [
+////                .headerSearchPath("private"),
+////                .headerSearchPath("src")
+////            ],
 //        ),
         .target(
             name: "Chips",
             // dependencies: ["MaterialComponents"],
-            path: "components/Chips",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
-            publicHeadersPath: "src",
-            cSettings: [
-                .headerSearchPath("private"),
-                .headerSearchPath("src")
-            ]
-        ),
-        .target(
-            name: "Elevation",
-            // dependencies: ["MaterialComponents"],
-            path: "components/Elevation",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/Chips",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -83,8 +110,8 @@ let package = Package(
         .target(
             name: "Buttons",
             // dependencies: ["MaterialComponents"],
-            path: "components/Buttons",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/Buttons",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -94,8 +121,8 @@ let package = Package(
         .target(
             name: "BottomSheet",
             // dependencies: ["MaterialComponents"],
-            path: "components/BottomSheet",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/BottomSheet",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -105,8 +132,8 @@ let package = Package(
         .target(
             name: "Dialogs",
             // dependencies: ["MaterialComponents"],
-            path: "components/Dialogs",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/Dialogs",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -116,8 +143,8 @@ let package = Package(
         .target(
             name: "NavigationBar",
             // dependencies: ["MaterialComponents"],
-            path: "components/NavigationBar",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/NavigationBar",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -127,8 +154,8 @@ let package = Package(
         .target(
             name: "TextFields",
             // dependencies: ["MaterialComponents"],
-            path: "components/TextFields",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/TextFields",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
@@ -138,8 +165,74 @@ let package = Package(
         .target(
             name: "Typography",
             // dependencies: ["MaterialComponents"],
-            path: "components/Typography",  // 'path' should come before 'sources'
-            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            path: "components/Typography",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "Collections",
+            // dependencies: ["MaterialComponents"],
+            path: "components/Collections",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "ActivityIndicator",
+            // dependencies: ["MaterialComponents"],
+            path: "components/ActivityIndicator",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "FlexibleHeader",
+            // dependencies: ["MaterialComponents"],
+            path: "components/FlexibleHeader",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "BottomAppBar",
+            // dependencies: ["MaterialComponents"],
+            path: "components/BottomAppBar",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "Cards",
+            // dependencies: ["MaterialComponents"],
+            path: "components/Cards",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "Snackbar",
+            // dependencies: ["MaterialComponents"],
+            path: "components/Snackbar",
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files recursively
             publicHeadersPath: "src",
             cSettings: [
                 .headerSearchPath("private"),
