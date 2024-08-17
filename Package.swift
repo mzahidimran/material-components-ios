@@ -17,6 +17,10 @@ let package = Package(
             targets: ["Chips"]
         ),
         .library(
+            name: "MaterialComponentsElevation",
+            targets: ["Elevation"]
+        ),
+        .library(
             name: "MaterialComponentsButtons",
             targets: ["Buttons"]
         ),
@@ -58,6 +62,17 @@ let package = Package(
             name: "Chips",
             // dependencies: ["MaterialComponents"],
             path: "components/Chips",  // 'path' should come before 'sources'
+            sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
+            publicHeadersPath: "src",
+            cSettings: [
+                .headerSearchPath("private"),
+                .headerSearchPath("src")
+            ]
+        ),
+        .target(
+            name: "Elevation",
+            // dependencies: ["MaterialComponents"],
+            path: "components/Elevation",  // 'path' should come before 'sources'
             sources: ["**/*.m", "**/*.h"], // Filters for .m and .h files
             publicHeadersPath: "src",
             cSettings: [
